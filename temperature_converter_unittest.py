@@ -13,4 +13,14 @@ class TestConverter(unittest.TestCase):
         # Test errors
         self.assertRaises(TypeError, f_to_c, 'freezing')
 
+    def test_celsius_to_fahrenheit(self):
+        # Test freezing temperature
+        self.assertEqual(c_to_F(0), 32)  
+        # Test boiling temperature
+        self.assertEqual(c_to_F(100), 212)  
+        # Test float
+        self.assertAlmostEqual(c_to_F(-0.5555555555), 31)  
+        # Test errors
+        self.assertRaises(TypeError, c_to_F, 'freezing')
+
 unittest.main()
